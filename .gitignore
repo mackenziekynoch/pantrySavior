@@ -1,3 +1,6 @@
 # Node
 .env
 node_modules
+
+# Webpack
+public
