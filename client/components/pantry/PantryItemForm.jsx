@@ -4,10 +4,7 @@ import { addPantryItem } from '../../redux/pantrySlice';
 
 const PantryItemForm = (props) => {
   const dispatch = useDispatch();
-  const lastId = useSelector(state => {
-    console.log(state);
-    return Math.max(...state.pantry.ids, -1)
-  });
+  const lastId = useSelector(state => Math.max(...state.pantry.ids, -1));
 
   const [ title, setTitle ] = useState('');
   const [ qty, setQty ] = useState(1);
