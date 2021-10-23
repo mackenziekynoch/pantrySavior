@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import PantryItem from './PantryItem.jsx';
 import PantryItemForm from './PantryItemForm.jsx';
 
 const PantryList = (props) => {
   const [ editing, setEditing ] = useState(false);
+  const pantryItems = useSelector(state => state.pantry.ids.map(id => state.pantry.entities[id]));
+  console.log(pantryItems)
 
   return (
     <main id='pantryList' className='container-main'>
-      {props.items.map(item =>
+      {pantryItems.map(item =>
         <PantryItem key={item.id} item={item} />
       )}
-      <button id='addPantryItem' className='circle-button' onClick={() => setEditing(true)}>+</button>
+      { !editing &&
+        <button id='addPantryItem' className='circle-button' onClick={() => setEditing(true)}>+</button>
+      }
       { editing &&
         <PantryItemForm resetEditing={setEditing} />
       }
