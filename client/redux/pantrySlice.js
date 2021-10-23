@@ -1,8 +1,7 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import data from '../../database/specData.js';
 
 const pantryAdapter = createEntityAdapter({
-  sortComparer: (a, b) => a.expiry < b.expiry,
+  sortComparer: (a, b) => Date.parse(a.expiry) < Date.parse(b.expiry),
 });
 
 export const pantrySlice = createSlice({

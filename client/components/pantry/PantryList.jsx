@@ -11,7 +11,9 @@ const PantryList = (props) => {
       {props.items.map(item =>
         <PantryItem key={item.id} item={item} />
       )}
-      <button id='addPantryItem' className='circle-button' onClick={() => setEditing(true)}>+</button>
+      { !editing &&
+        <button id='addPantryItem' className='circle-button' onClick={() => setEditing(true)}>+</button>
+      }
       { editing &&
         <PantryItemForm resetEditing={setEditing} />
       }
