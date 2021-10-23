@@ -1,0 +1,68 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #ffdd33;
+
+// escape default formatting
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+// static page elements
+header {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  font: 100% $font-stack;
+  background-color: $primary-color;
+}
+nav {
+  font: 100% $font-stack;
+  background-color: $primary-color;
+  a {
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    font-weight: 600;
+    color: cadetblue;
+  }
+}
+
+// container formatting
+.container-main {
+  margin: 20px;
+  padding: 1px 0;
+  font: 100% $font-stack;
+}
+// list styling
+.listEntry {
+  padding: 5px;
+  margin: 8px;
+  border-radius: 5px;
+}
+.listEntryTitle {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: block;
+}
+.listEntryQty {
+  margin: 0 10px;
+}
+.listEntryDate {
+  margin: 0 10px;
+  float: right;
+}
+
+// service-specific styling
+#pantryList {
+   background-color: #ffeb88;
+}
+.pantryItem {
+  background-color: cornsilk;
+}
