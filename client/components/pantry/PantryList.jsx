@@ -6,6 +6,7 @@ const PantryList = (props) => (
     {props.items.map(item =>
       <PantryItem key={item.id} item={item} />
     )}
+    {/* <button id='addPantryItem' className='circle-button' /> */}
   </main>
 );
 
