@@ -17,6 +17,11 @@ module.exports = {
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
+      },
+      {
+        test: /\.s?css$/,
+        include: path.join(__dirname, 'client/assets'),
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
