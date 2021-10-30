@@ -29,14 +29,7 @@ export const pantrySlice = createSlice({
       }
     },
     addPantryItem: pantryAdapter.addOne,
-    changeExpiry: (state, action) => {
-      pantryAdapter.updateOne({
-        id: action.payload.id,
-        changes: {
-          expiry: action.payload.expiry
-        }
-      });
-    }
+    changeExpiry: pantryAdapter.setOne
   }
 });
 
