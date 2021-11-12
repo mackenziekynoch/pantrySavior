@@ -7,7 +7,6 @@ import PantryItemForm from './PantryItemForm.jsx';
 const PantryList = (props) => {
   const [ editing, setEditing ] = useState(false);
   const pantryItems = useSelector(state => state.pantry.ids.map(id => state.pantry.entities[id]));
-  console.log(pantryItems)
 
   return (
     <main id='pantryList' className='container-main'>

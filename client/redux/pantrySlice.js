@@ -8,37 +8,17 @@ export const pantrySlice = createSlice({
   name: 'pantry',
   initialState: pantryAdapter.getInitialState(),
   reducers: {
-    increment: (state, action) => {
-      pantryAdapter.updateOne({
-        id: action.payload,
-        changes: {
-          qty: state.entites[action.payload] + 1
-        }
-      });
-    },
-    decrement: (state, action) => {
-      if (state.entities[action.payload] > 1) {
-        pantryAdapter.updateOne({
-          id: action.payload,
-          changes: {
-            qty: state.entities[action.payload] - 1
-          }
-        });
+    changeQty: (state, action) => {
+      if (action.payload.qty > 0) {
+        pantryAdapter.setOne(state, action);
       } else {
-        pantryAdapter.removeOne(action.payload);
+        pantryAdapter.removeOne(state, action.payload.id);
       }
     },
     addPantryItem: pantryAdapter.addOne,
-    changeExpiry: (state, action) => {
-      pantryAdapter.updateOne({
-        id: action.payload.id,
-        changes: {
-          expiry: action.payload.expiry
-        }
-      });
-    }
+    changeExpiry: pantryAdapter.setOne
   }
 });
 
-export const { increment, decrement, addPantryItem, changeExpiry } = pantrySlice.actions;
+export const { changeQty, addPantryItem, changeExpiry } = pantrySlice.actions;
 export default pantrySlice.reducer;
