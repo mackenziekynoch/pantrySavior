@@ -3,18 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'client/pantry': './client/pantry.js',
-    'client/recipe': './client/recipe.js',
+    'pantry/pantry': './client/pantry/pantry.js',
+    'recipe/recipe': './client/recipe/recipe.js',
   },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js'
   },
-  // entry: './client/index.js',
-  // output: {
-  //   filename: 'pantrySavior.js',
-  //   path: path.join(__dirname, 'public')
-  // },
   module: {
     rules: [
       {
@@ -35,14 +30,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'pantry.html',
+      filename: 'pantry/index.html',
       inject: false,
-      template: path.join(__dirname, 'client/assets/pantry.html')
+      template: path.join(__dirname, 'client/pantry/assets/index.html')
     }),
     new HtmlWebpackPlugin({
-      filename: 'recipes.html',
+      filename: 'recipe/index.html',
       inject: false,
-      template: path.join(__dirname, 'client/assets/recipes.html')
+      template: path.join(__dirname, 'client/recipe/assets/index.html')
     }),
   ]
 };
