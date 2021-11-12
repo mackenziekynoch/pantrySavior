@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPantryItem } from '../../redux/pantrySlice';
+import { addPantryItem } from '../redux/pantrySlice';
 
 const PantryItemForm = (props) => {
   const dispatch = useDispatch();

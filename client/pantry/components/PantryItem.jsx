@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getRelativeTime } from '../../utils/format.js';
 import { useDispatch } from 'react-redux';
-import { changeQty, changeExpiry } from '../../redux/pantrySlice';
+import { changeQty, changeExpiry } from '../redux/pantrySlice';
 import _ from 'lodash';
 
 const PantryItem = (props) => {
